@@ -1,0 +1,15 @@
+document.getElementById("login").onclick = function() {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    firebase.auth().signInWithEmailAndPassword(email, password).then((usercredential) =>{
+    //    alert("User Created Successfully"); 
+   
+      window.location.href = "index.html";
+    }).catch((Error) => {
+        // let errormessage = Error.message;
+        // alert(errormessage);
+        alert("Invalid email or password");
+          
+    })
+   
+}
